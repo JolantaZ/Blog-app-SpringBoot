@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+</head>
+<body>
+<h4>CREATE YOU ACCOUNT BY SIGNING IN</h4>
+<h1>Form</h1>
+<form th:action="@{/register}" th:object = "${userentity}" method="post">
+<div>
+    <label>name</label>
+    <input type="text" th:field = "*{name}" />
+    <p th:each="error:${#fields.errors('name')}"
+       th:text="${error}">Validation error</p>
+</div>
+    <div>
+    <label>login</label>
+    <input type="text" th:field = "*{login}" />
+    <p th:each="error:${#fields.errors('login')}"
+       th:text="${error}">Validation error</p>
+    </div>
+<div>
+    <label>password</label>
+    <input type="password" th:field = "*{password}" />
+    <p th:each="error:${#fields.errors('password')}"
+       th:text="${error}">Validation error</p>
+</div>
+<div>
+    <label>role</label>
+    <select th:field = "*{role}">
+        <option value="ROLE_USER">USER_Role</option>
+        <option value="ROLE_ADMIN">ADMIN_Role</option>
+    </select>
+</div>
+<div>
+    <p><input type="submit" value = "Sign in" /></p>
+</div>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Area</title>
+</head>
+<body>
+
+<h4>Deleting Post page</h4>
+<form th:action="@{/deletePost}" method="POST">
+
+    <label for="id_post">POST ID</label>
+    <input id="id_post" type="text" name="id_post"/>
+    <input type="submit" value="delete post"/>
+
+</form>
+
+</body>
+</html>

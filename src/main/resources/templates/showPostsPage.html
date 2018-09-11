@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Posts</title>
+</head>
+
+<body>
+<form th:action="@{/showPostsCat}" method="post">
+    <label for="category">Find by category</label>
+    <select id="category" name="category">
+        <option value="travels">Travels</option>
+        <option value="food">Food</option>
+        <option value="beauty">Beauty</option>
+    </select>
+    <input type="submit" value="search"/>
+</form>
+<form th:action="@{/showPostsByAuthor}" method="post">
+    <label for="category">Find by Author</label>
+    <input id="name" type="text" name="author_name"/>
+    <input type="submit" value="search"/>
+</form>
+
+
+
+<tr th:each="post: ${allPosts}">
+    <div th:object="${post}">
+
+        <p><td th:text="*{title}"></td></p>
+        <p>Category: <td th:text="*{category}"></td> </p>
+        <p><td th:text="*{text}"></td> </p>
+        <p><td th:text="*{userName}"></td></p>
+
+    </div>
+</tr>
+
+<tr th:each="post: ${foundedByCategory}">
+    <div th:object="${post}">
+
+        <p><td th:text="*{title}"></td></p>
+        <p>Category: <td th:text="*{category}"></td> </p>
+        <p><td th:text="*{text}"></td> </p>
+        <p><td th:text="*{userName}"></td></p>
+
+    </div>
+</tr>
+
+<tr th:each="post: ${foundedByAuthor}">
+    <div th:object="${post}">
+
+        <p><td th:text="*{title}"></td></p>
+        <p>Category: <td th:text="*{category}"></td> </p>
+        <p><td th:text="*{text}"></td> </p>
+        <p><td th:text="*{userName}"></td></p>
+
+    </div>
+</tr>
+</body>
+</html>

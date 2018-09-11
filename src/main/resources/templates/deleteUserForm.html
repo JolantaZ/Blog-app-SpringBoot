@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Area</title>
+</head>
+<body>
+<h4>Deleting User page</h4>
+<form th:action="@{/deleteUser}" method="POST">
+
+    <label for="id_usera">ID USER</label>
+    <input id="id_usera" type="text" name="id_user"/>
+    <input type="submit" value="delete user"/>
+
+
+
+
+</form>
+
+</body>
+</html>
